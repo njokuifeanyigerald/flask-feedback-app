@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Please rate your service</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+{#    <link rel="stylesheet" href="../static/style.css">#}
+</head>
+<body class="container text-center">
+
+    <div class="container">
+        <div class="text-center">
+            <img src="../static/logo.png" alt="Responsive image" class="img-fluid">
+        </div>
+        {% if message %}
+            <p class="message">{{ message|safe }}</p>
+        {% endif %}
+        <form action="/success" method="post">
+            <div class="form-group">
+                <h3>Customer Name</h3>
+                <input type="text" name="customer" placeholder="name of vehicle owner">
+            </div>
+            <div class="form-group">
+                <h3>dealer</h3>
+                <select name="dealer"  class="form-control">
+                    <option value=""> select option</option>
+                    <option value="nwaohiri donald">nwaohiri donald</option>
+                    <option value="nsofor chukwuebuka">nsofor chukwuebuka</option>
+                    <option value="elezua victor">elezua victor</option>
+                    <option value="ndudi eunice">ndudi eunice</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <h3>please rate your dealer</h3>
+                <div class="form-control">
+                    <input type="radio" name="rating" value="1">1
+                    <input type="radio" name="rating" value="2">2
+                    <input type="radio" name="rating" value="3">3
+                    <input type="radio" name="rating" value="4">4
+                    <input type="radio" name="rating" value="6">5
+                    <input type="radio" name="rating" value="6">6
+                    <input type="radio" name="rating" value="7">7
+                    <input type="radio" name="rating" value="8">8
+                    <input type="radio" name="rating" value="9">9
+                    <input type="radio" name="rating" value="10">10
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea name="comments" rows="4" cols="100" placeholder="Tell us what you liked and/or did not like"></textarea>
+            </div>
+
+            <input type="submit" value="submit" class="btn btn-success">
+        </form>
+    </div>
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
